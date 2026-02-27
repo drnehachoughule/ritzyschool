@@ -1,0 +1,1094 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facilities | Ritzy Junior School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./index.js" defer></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <link rel="stylesheet" href="./home.css" />
+    <link rel="icon" type="image/png" href="./assets/ImageClouser/ritzy.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="../assets/ImageClouser/ritzy.png" type="image/png" />
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        overflow-x: hidden;
+        /* Prevents scrollbar flickering during animation */
+      }
+
+      .serif-heading {
+        font-family: "Crimson Pro", serif;
+      }
+
+      .nav-link {
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: #4f46e5;
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .shishu-gradient {
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+      }
+
+      #slider {
+        display: flex;
+        transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .slide-shadow {
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Floating banner of School Services */
+
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .animate-marquee {
+        animation: marquee 30s linear infinite;
+      }
+    </style>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      /* Custom CSS for background floating animation */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) translateX(0px) scale(1);
+        }
+
+        50% {
+          transform: translateY(-20px) translateX(10px) scale(1.05);
+        }
+      }
+
+      @keyframes float-reverse {
+        0%,
+        100% {
+          transform: translateY(0px) translateX(0px) scale(1);
+        }
+
+        50% {
+          transform: translateY(20px) translateX(-10px) scale(1.05);
+        }
+      }
+
+      .animate-float {
+        animation: float 10s ease-in-out infinite;
+      }
+
+      .animate-float-reverse {
+        animation: float-reverse 13s ease-in-out infinite;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-50">
+    <section
+      class="bg-indigo-900 text-white py-2 px-4 hidden md:block"
+      data-aos="fade-down"
+      data-aos-duration="800"
+    >
+      <div
+        class="max-w-7xl mx-auto flex justify-end items-end text-xs font-medium uppercase tracking-widest"
+      >
+        <div class="flex gap-6">
+          <a href="https://maps.app.goo.gl/T2Xvwf1zD8MbsG4w5">
+            <span>Bicholi Hapsi Rd, Indore</span></a
+          >
+          <a href="tel:+918319019445"> <span>+91 831 901 9445</span></a>
+        </div>
+      </div>
+    </section>
+
+    <header
+      class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100"
+      data-aos="fade-down"
+      data-aos-delay="100"
+      data-aos-duration="1000"
+    >
+      <nav
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a href="/index.html">
+          <div
+            class="flex items-center gap-4"
+            data-aos="fade-right"
+            data-aos-delay="300"
+          >
+            <img
+              src="/assets/ImageClouser/ritzy.png"
+              class="h-10 md:h-12"
+              alt="Ritzy Logo"
+            />
+            <div class="border-l pl-4">
+              <h1
+                class="serif-heading text-lg md:text-xl font-bold text-[#df0211]"
+              >
+                RITZY JUNIOR
+              </h1>
+              <p
+                class="text-[10px] tracking-[0.3em] text-indigo-600 font-bold uppercase"
+              >
+                School
+              </p>
+            </div>
+          </div>
+        </a>
+
+        <div
+          class="hidden lg:flex space-x-8 font-semibold text-xs uppercase tracking-wider text-slate-600"
+          data-aos="fade-down"
+          data-aos-delay="400"
+        >
+          <a href="/index.html" class="nav-link">Home</a>
+          <a href="/pages/about.html" class="nav-link">About Us</a>
+          <a href="/pages/academics.html" class="nav-link">Academics</a>
+          <a href="/pages/activities.html" class="nav-link">Activities</a>
+          <a
+            href="/pages/facilities.html"
+            class="nav-link text-indigo-900 font-bold"
+            >Facilities</a
+          >
+          <a href="/pages/contact.html" class="nav-link">Contact Us</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <a
+            href="javascript:void(0)"
+            onclick="openPopup()"
+            class="hidden md:block bg-indigo-900 text-white px-6 py-2.5 rounded-md text-sm font-bold hover:bg-indigo-800 transition-colors"
+          >
+            ADMISSIONS 2026
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button id="menu-btn" class="lg:hidden text-indigo-950">
+            <svg
+              id="menu-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="fixed top-[72px] p-5 left-0 w-full bg-white z-40 hidden flex-col items-center justify-center gap-8 text-center lg:hidden"
+      >
+        <a href="/index.html" class="nav-link">Home</a>
+        <a href="/pages/about.html" class="nav-link">About Us</a>
+        <a href="/pages/academics.html" class="nav-link">Academics</a>
+        <a href="/pages/activities.html" class="nav-link">Activities</a>
+        <a
+          href="/pages/facilities.html"
+          class="nav-link text-indigo-900 font-bold"
+          >Facilities</a
+        >
+        <a href="/pages/contact.html" class="nav-link">Contact Us</a>
+
+        <a
+          href="javascript:void(0)"
+          onclick="openPopup()"
+          class="mt-6 bg-indigo-900 text-white px-8 py-3 rounded-md font-bold"
+        >
+          ADMISSIONS 2026
+        </a>
+      </div>
+
+      <script></script>
+    </header>
+
+    <section class="relative py-24 px-4 bg-slate-50 overflow-hidden font-sans">
+      <div
+        class="absolute top-0 left-0 w-96 h-96 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 -translate-x-1/2 -translate-y-1/2 animate-float"
+      ></div>
+      <div
+        class="absolute bottom-0 right-0 w-96 h-96 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 translate-x-1/2 translate-y-1/2 animate-float-reverse"
+      ></div>
+
+      <div class="relative z-10 text-center mb-20" data-aos="fade-up">
+        <div
+          class="inline-block bg-orange-100 text-orange-600 px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4"
+        >
+          Our Curriculum
+        </div>
+        <h2
+          class="text-4xl md:text-5xl font-extrabold text-slate-800 tracking-tight"
+        >
+          Educational Programs & Services
+        </h2>
+        <p
+          class="text-slate-600 max-w-2xl mx-auto mt-6 text-lg leading-relaxed"
+        >
+          Our thoughtfully designed programs support every stage of early
+          childhood development, focusing on learning, creativity, and emotional
+          well-being.
+        </p>
+      </div>
+
+      <div
+        class="relative z-10 grid gap-8 max-w-7xl mx-auto sm:grid-cols-2 lg:grid-cols-4"
+      >
+        <div
+          class="group bg-white rounded-[2.5rem] p-8 text-center shadow-lg border-b-[6px] border-blue-400 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <div
+            class="w-20 h-20 mx-auto bg-blue-100 rounded-full flex items-center justify-center text-4xl mb-6 group-hover:scale-110 transition-transform"
+          >
+            <img
+              src="../assets/icons/baby.png"
+              class="w-12 h-auto object-contain"
+              alt="baby"
+            />
+          </div>
+          <h3 class="font-bold text-xl text-slate-800 mb-3">Daycare</h3>
+          <p class="text-sm text-slate-500 leading-relaxed">
+            Our daycare provides a warm, safe, and nurturing environment where
+            toddlers are cared for with love, personal attention, and
+            age-appropriate activities.
+          </p>
+        </div>
+
+        <div
+          class="group bg-white rounded-[2.5rem] p-8 text-center shadow-lg border-b-[6px] border-green-400 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <div
+            class="w-20 h-20 mx-auto bg-green-100 rounded-full flex items-center justify-center text-4xl mb-6 group-hover:scale-110 transition-transform"
+          >
+            <img
+              src="../assets/icons/bear.png"
+              class="w-12 h-auto object-contain"
+              alt="bear"
+            />
+          </div>
+          <h3 class="font-bold text-xl text-slate-800 mb-3">Play School</h3>
+          <p class="text-sm text-slate-500 leading-relaxed">
+            Our play school focuses on learning through play, helping children
+            build confidence, curiosity, and essential life skills through
+            interactive games.
+          </p>
+        </div>
+
+        <div
+          class="group bg-white rounded-[2.5rem] p-8 text-center shadow-lg border-b-[6px] border-orange-400 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <div
+            class="w-20 h-20 mx-auto bg-orange-100 rounded-full flex items-center justify-center text-4xl mb-6 group-hover:scale-110 transition-transform"
+          >
+            <img
+              src="../assets/icons/paint-palette.png"
+              class="w-12 h-auto object-contain"
+              alt="paint"
+            />
+          </div>
+          <h3 class="font-bold text-xl text-slate-800 mb-3">
+            Kids Play School
+          </h3>
+          <p class="text-sm text-slate-500 leading-relaxed">
+            Designed for young learners, our kids play school encourages
+            imagination and self-expression through art, music, movement, and
+            creative play.
+          </p>
+        </div>
+
+        <div
+          class="group bg-white rounded-[2.5rem] p-8 text-center shadow-lg border-b-[6px] border-pink-400 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          <div
+            class="w-20 h-20 mx-auto bg-pink-100 rounded-full flex items-center justify-center text-4xl mb-6 group-hover:scale-110 transition-transform"
+          >
+            <img
+              src="../assets/icons/books-stack-of-three.png"
+              class="w-12 h-auto object-contain"
+              alt="books"
+            />
+          </div>
+          <h3 class="font-bold text-xl text-slate-800 mb-3">
+            School & Kindergarten
+          </h3>
+          <p class="text-sm text-slate-500 leading-relaxed">
+            Our programs build a strong foundation in early literacy, numeracy,
+            communication, and social skills, preparing children confidently for
+            formal schooling.
+          </p>
+        </div>
+      </div>
+
+      <div class="relative z-10 text-center mt-32 mb-16" data-aos="fade-up">
+        <div
+          class="inline-block bg-purple-100 text-purple-600 px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4"
+        >
+          Why Parents Trust Us
+        </div>
+        <h2
+          class="text-4xl md:text-5xl font-extrabold text-slate-800 tracking-tight"
+        >
+          Facilities & Safety Standards
+        </h2>
+        <p
+          class="text-slate-600 max-w-2xl mx-auto mt-6 text-lg leading-relaxed"
+        >
+          We ensure a safe, hygienic, and child-friendly environment where
+          parents can feel completely confident about their child’s safety and
+          well-being.
+        </p>
+      </div>
+
+      <div
+        class="relative z-10 grid gap-6 max-w-6xl mx-auto sm:grid-cols-2 lg:grid-cols-3"
+      >
+        <div
+          class="bg-white rounded-[2rem] p-8 shadow-sm border-b-[6px] border-indigo-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <div
+            class="w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center text-3xl mb-6"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              fill="currentColor"
+              class="bi bi-building"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z"
+              />
+              <path
+                d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1zm11 0H3v14h3v-2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V15h3z"
+              />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-800 mb-3">Secure Campus</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">
+            Our school campus is fully secured with controlled access points and
+            constant supervision.
+          </p>
+        </div>
+
+        <div
+          class="bg-white rounded-[2rem] p-8 shadow-sm border-b-[6px] border-red-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          data-aos="fade-up"
+          data-aos-delay="150"
+        >
+          <div
+            class="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center text-3xl mb-6"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              fill="currentColor"
+              class="bi bi-camera"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4z"
+              />
+              <path
+                d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5m0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7M3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"
+              />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-800 mb-3">
+            Advanced Surveillance
+          </h3>
+          <p class="text-slate-500 text-sm leading-relaxed">
+            Advanced CCTV surveillance is installed across classrooms and common
+            areas to ensure safety.
+          </p>
+        </div>
+
+        <div
+          class="bg-white rounded-[2rem] p-8 shadow-sm border-b-[6px] border-teal-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <div
+            class="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center text-3xl mb-6"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              fill="currentColor"
+              class="bi bi-bandaid-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="m2.68 7.676 6.49-6.504a4 4 0 0 1 5.66 5.653l-1.477 1.529-5.006 5.006-1.523 1.472a4 4 0 0 1-5.653-5.66l.001-.002 1.505-1.492.001-.002Zm5.71-2.858a.5.5 0 1 0-.708.707.5.5 0 0 0 .707-.707ZM6.974 6.939a.5.5 0 1 0-.707-.707.5.5 0 0 0 .707.707M5.56 8.354a.5.5 0 1 0-.707-.708.5.5 0 0 0 .707.708m2.828 2.828a.5.5 0 1 0-.707-.707.5.5 0 0 0 .707.707m1.414-2.121a.5.5 0 1 0-.707.707.5.5 0 0 0 .707-.707m1.414-.707a.5.5 0 1 0-.706-.708.5.5 0 0 0 .707.708Zm-4.242.707a.5.5 0 1 0-.707.707.5.5 0 0 0 .707-.707m1.414-.707a.5.5 0 1 0-.707-.708.5.5 0 0 0 .707.708m1.414-2.122a.5.5 0 1 0-.707.707.5.5 0 0 0 .707-.707M8.646 3.354l4 4 .708-.708-4-4zm-1.292 9.292-4-4-.708.708 4 4z"
+              />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-800 mb-3">
+            Health & Hygiene
+          </h3>
+          <p class="text-slate-500 text-sm leading-relaxed">
+            We follow strict hygiene and cleanliness standards with regular
+            sanitization of classrooms.
+          </p>
+        </div>
+
+        <div
+          class="bg-white rounded-[2rem] p-8 shadow-sm border-b-[6px] border-fuchsia-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          data-aos="fade-up"
+          data-aos-delay="250"
+        >
+          <div
+            class="w-16 h-16 bg-fuchsia-50 rounded-2xl flex items-center justify-center text-3xl mb-6"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              fill="currentColor"
+              class="bi bi-people"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"
+              />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-800 mb-3">Trained Staff</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">
+            Our teachers are professionally trained and compassionate, ensuring
+            individual care.
+          </p>
+        </div>
+
+        <div
+          class="bg-white rounded-[2rem] p-8 shadow-sm border-b-[6px] border-yellow-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <div
+            class="w-16 h-16 bg-yellow-50 rounded-2xl flex items-center justify-center text-3xl mb-6"
+          >
+            🛝
+          </div>
+          <h3 class="text-xl font-bold text-slate-800 mb-3">
+            Outdoor Play Area
+          </h3>
+          <p class="text-slate-500 text-sm leading-relaxed">
+            Designed with child-safe equipment that encourages physical activity
+            and healthy outdoor play.
+          </p>
+        </div>
+
+        <div
+          class="bg-white rounded-[2rem] p-8 shadow-sm border-b-[6px] border-violet-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          data-aos="fade-up"
+          data-aos-delay="350"
+        >
+          <div
+            class="w-16 h-16 bg-violet-50 rounded-2xl flex items-center justify-center text-3xl mb-6"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              fill="currentColor"
+              class="bi bi-heart"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
+              />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-800 mb-3">
+            Child-Friendly Environment
+          </h3>
+          <p class="text-slate-500 text-sm leading-relaxed">
+            Our colorful classrooms create a warm, welcoming, and stress-free
+            environment.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="relative z-10 mt-28 max-w-4xl mx-auto text-center px-4"
+        data-aos="zoom-in-up"
+        data-aos-offset="200"
+      >
+        <div
+          class="bg-gradient-to-r from-orange-400 via-pink-500 to-purple-500 text-white rounded-[3rem] p-12 shadow-2xl relative overflow-hidden group"
+        >
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full -mr-10 -mt-10 transition-transform group-hover:rotate-45 duration-700"
+          ></div>
+
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
+            Admissions Open
+          </h2>
+          <p class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            Give your child a joyful, confident, and strong start to their
+            learning journey.
+          </p>
+          <a href="javascript:void(0)" onclick="openPopup()">
+            <button
+              class="bg-white text-orange-600 px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:scale-105 hover:bg-slate-50 transition-all transform"
+            >
+              Book a School Visit
+            </button></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-slate-950 text-white pt-20 pb-10 px-6 mt-10">
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16"
+        >
+          <div class="space-y-6" data-aos="fade-up" data-aos-delay="0">
+            <a href="/index.html">
+              <div class="flex items-center gap-4">
+                <img
+                  src="/assets/ImageClouser/ritzy.png"
+                  alt="Logo"
+                  class="h-10 md:h-12 w-auto"
+                />
+                <div class="border-l pl-4 border-slate-700">
+                  <h1
+                    class="serif-heading text-lg md:text-xl font-bold leading-none text-[#df0211]"
+                  >
+                    RITZY JUNIOR
+                  </h1>
+                  <p
+                    class="text-[9px] tracking-[0.3em] text-indigo-400 font-bold uppercase"
+                  >
+                    School
+                  </p>
+                </div>
+              </div>
+            </a>
+            <p class="text-slate-400 leading-relaxed text-sm">
+              Nurturing curiosity and building foundations for a lifelong love
+              of learning. Join our community of happy explorers today.
+            </p>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="100">
+            <h4 class="text-lg font-bold mb-6 text-indigo-200">Explore</h4>
+            <ul class="space-y-4 text-slate-400 text-sm">
+              <li>
+                <a
+                  href="/pages/academics.html"
+                  class="hover:text-amber-400 transition flex items-center gap-2"
+                  ><span>›</span> Programs & Curriculum</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/pages/activities.html"
+                  class="hover:text-amber-400 transition flex items-center gap-2"
+                  ><span>›</span> Activities</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/pages/facilities.html"
+                  class="hover:text-amber-400 transition flex items-center gap-2"
+                  ><span>›</span> Services & Facilities</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/pages/about.html"
+                  class="hover:text-amber-400 transition flex items-center gap-2"
+                  ><span>›</span> Career with us</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="200">
+            <h4 class="text-lg font-bold mb-6 text-indigo-200">Contact</h4>
+
+            <ul class="space-y-4 text-slate-400 text-sm">
+              <!-- Address -->
+              <li
+                class="hover:text-amber-400 transition flex items-start gap-3 cursor-pointer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 text-gray mt-1 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 11c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 22s8-4.5 8-11a8 8 0 10-16 0c0 6.5 8 11 8 11z"
+                  />
+                </svg>
+                <a
+                  href="https://maps.app.goo.gl/T2Xvwf1zD8MbsG4w5"
+                  target="_blank"
+                >
+                  <span class="hover:text-amber-400 transition cursor-pointer">
+                    40-41, Sarv Suvidha Nagar,<br />
+                    Bicholi Hapsi Rd, Indore, MP 452016
+                  </span>
+                </a>
+              </li>
+
+              <!-- Phone -->
+              <li
+                class="hover:text-amber-400 transition flex items-center gap-3 cursor-pointer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 text-gray flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+                <a href="tel:+918319019445"> <span>+91 831 901 9445</span></a>
+              </li>
+
+              <!-- Email -->
+              <li
+                class="hover:text-amber-400 transition flex items-center gap-3 cursor-pointer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="pt-1 w-5 h-5 text-gay flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18a2 2 0 002-2V6a2 2 0 00-2-2H3a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  />
+                </svg>
+                <a href="mailto:ritzyjuniorschool@gmail.com">
+                  <span>ritzyjuniorschool@gmail.com</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="200">
+            <h4 class="text-lg font-bold mb-6 text-indigo-200">Connect</h4>
+
+            <ul class="space-y-4 text-slate-400 text-sm">
+              <li class="transition flex items-start gap-3 cursor-pointer">
+                <div class="flex gap-4">
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100083455715822"
+                    target="_blank"
+                    class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-indigo-600 hover:-translate-y-1 transition duration-300"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/ritzyjuniorschool?igsh=MXd5eGVjOGlqN250Mg=="
+                    target="_blank"
+                    class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-pink-600 hover:-translate-y-1 transition duration-300"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.947.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.947-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between text-slate-400 items-center gap-4 text-xs"
+        >
+          <p>© 2026 Ritzy Junior School. All rights reserved.</p>
+          <div class="flex gap-8">
+            <a href="#" class="hover:text-white transition">Privacy Policy</a>
+            <a href="#" class="hover:text-white transition">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <section>
+      <a
+        href="https://wa.me/918319019445"
+        target="_blank"
+        class="fixed bottom-6 right-6 z-50 group flex items-center gap-3"
+        aria-label="Chat on WhatsApp"
+      >
+        <span
+          class="hidden md:block opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 transition-all duration-300 ease-out"
+        >
+          <span
+            class="bg-white text-slate-800 text-sm font-bold px-4 py-2 rounded-xl shadow-xl border border-slate-100"
+          >
+            Chat with us!
+          </span>
+        </span>
+
+        <div
+          class="relative flex items-center justify-center w-16 h-16 transition-transform duration-300 group-hover:scale-110 active:scale-95"
+        >
+          <span
+            class="absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-20 animate-ping"
+          ></span>
+
+          <span
+            class="relative flex items-center justify-center w-14 h-14 rounded-full bg-green-500 text-white shadow-[0_10px_25px_-5px_rgba(34,197,94,0.4)] hover:bg-green-600 transition-colors duration-300"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              class="w-8 h-8 fill-current"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+              />
+            </svg>
+          </span>
+        </div>
+      </a>
+    </section>
+
+    <section>
+      <div
+        id="inquiryPopup"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-indigo-950/40 backdrop-blur-sm px-4"
+      >
+        <div
+          class="bg-white w-full max-w-lg rounded-[2.5rem] p-8 md:p-12 relative shadow-2xl border border-white/20 transform transition-all duration-500 scale-95 opacity-0"
+          id="popupBox"
+        >
+          <!-- <div class="absolute -top-6 -left-6 w-20 h-20 bg-amber-100 rounded-full -z-10 animate-pulse"></div> -->
+
+          <button
+            onclick="closePopup()"
+            class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-full text-slate-400 hover:text-indigo-600 transition-all text-2xl"
+          >
+            &times;
+          </button>
+
+          <div class="text-center mb-8">
+            <span
+              class="bg-indigo-50 text-indigo-600 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest"
+              >Admissions Open</span
+            >
+            <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-4">
+              Start Your Child's <br /><span class="text-indigo-600 italic"
+                >Journey with Us</span
+              >
+            </h2>
+            <p class="text-slate-500 mt-2 text-sm">
+              Fill out the details below and our admissions counselor will reach
+              out to you within 24 hours.
+            </p>
+          </div>
+
+          <form id="contactForm" class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label
+                  class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1 ml-2"
+                  >Parent Name</label
+                >
+                <input
+                  type="text"
+                  placeholder="Name"
+                  name="parent_name"
+                  required
+                  class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-3.5 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:bg-white transition-all text-sm"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1 ml-2"
+                  >Phone Number</label
+                >
+                <input
+                  type="tel"
+                  placeholder="+91 XXXXX XXXXX"
+                  name="phone"
+                  required
+                  class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-3.5 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:bg-white transition-all text-sm"
+                />
+              </div>
+            </div>
+            <div>
+              <label
+                class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1 ml-2"
+                >Email</label
+              >
+              <input
+                type="email"
+                placeholder="Enter Email"
+                name="email"
+                required
+                class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-3.5 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:bg-white transition-all text-sm"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1 ml-2"
+                >Program of Interest</label
+              >
+              <select
+                name="program"
+                required
+                class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-3.5 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:bg-white transition-all text-sm appearance-none cursor-pointer"
+              >
+                <option>Select Program</option>
+                <option>Daycare Services</option>
+                <option>Play Group (1.5 - 2.5 Years)</option>
+                <option>Pre-Nursery (2.5 - 3 Years)</option>
+                <option>Nursery (3 - 4 Years)</option>
+                <option>LKG / UKG (4 - 6 Years)</option>
+                <option>1st - 8th (6 - 13 Years)</option>
+              </select>
+            </div>
+
+            <button
+              type="submit"
+              onclick="closePopup()"
+              class="w-full bg-indigo-900 text-white py-4 rounded-2xl font-bold text-sm tracking-wider hover:bg-amber-500 hover:text-indigo-950 shadow-lg shadow-indigo-200 transition-all active:scale-95 mt-2"
+            >
+              BOOK A CAMPUS VISIT
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <div
+      id="toast"
+      class="fixed hidden top-40 right-5 z-50 bg-indigo-900 text-white px-5 py-4 rounded-xl shadow-2xl flex items-start gap-3 w-[90%] max-w-sm transform translate-x-full opacity-0 transition-all duration-300 ease-out"
+    >
+      <div
+        class="w-6 h-6 flex items-center justify-center rounded-full text-white text-sm"
+      >
+        ✓
+      </div>
+      <!-- Content -->
+      <div class="flex-1">
+        <p class="font-semibold text-sm">Success</p>
+        <p id="toastMsg" class="text-xs text-slate-300">Saved successfully!</p>
+      </div>
+      <!-- Close -->
+      <button
+        onclick="hideToast()"
+        class="text-slate-400 hover:text-white text-lg leading-none"
+      >
+        &times;
+      </button>
+    </div>
+  </body>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    let toastTimeout;
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      const msg = document.getElementById("toastMsg");
+
+      toast.classList.remove("hidden");
+      msg.innerText = message;
+      // slide in
+      setTimeout(() => {
+        toast.classList.remove("translate-x-full", "opacity-0");
+        toast.classList.add("translate-x-0", "opacity-100");
+      }, 50);
+
+      // auto close
+      toastTimeout = setTimeout(hideToast, 3000);
+    }
+
+    function hideToast() {
+      const toast = document.getElementById("toast");
+
+      toast.classList.add("translate-x-full", "opacity-0");
+
+      setTimeout(() => {
+        toast.classList.add("hidden");
+      }, 300);
+    }
+    AOS.init({
+      duration: 800, // Animation kitni der chalegi (ms)
+      once: true, // Kya animation sirf ek baar chalni chahiye scroll karne par?
+      offset: 100, // Kitna scroll karne par animation shuru ho
+    });
+
+    // script of navbar
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuIcon = document.getElementById("menu-icon");
+
+    let isOpen = false;
+
+    menuBtn.addEventListener("click", () => {
+      isOpen = !isOpen;
+
+      mobileMenu.classList.toggle("hidden");
+      mobileMenu.classList.toggle("flex");
+
+      // Toggle icon
+      menuIcon.innerHTML = isOpen
+        ? `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M6 18L18 6M6 6l12 12" />`
+        : `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7" />`;
+    });
+
+    // Close menu when clicking any link
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        mobileMenu.classList.remove("flex");
+        isOpen = false;
+
+        // Reset to hamburger
+        menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M4 6h16M4 12h16m-7 6h7" />`;
+      });
+    });
+    // Script of Popup Inquiry Form
+    window.onload = () => {
+      if (!localStorage.getItem("popupShown")) {
+        setTimeout(() => {
+          document.getElementById("inquiryPopup").classList.remove("hidden");
+          document.getElementById("inquiryPopup").classList.add("flex");
+          document
+            .getElementById("popupBox")
+            .classList.remove("scale-95", "opacity-0");
+          document
+            .getElementById("popupBox")
+            .classList.add("scale-100", "opacity-100");
+          localStorage.setItem("popupShown", "true");
+        }, 3000);
+      }
+    };
+    function openPopup() {
+      const popup = document.getElementById("inquiryPopup");
+      const box = document.getElementById("popupBox");
+      popup.classList.remove("hidden");
+      popup.classList.add("flex");
+
+      setTimeout(() => {
+        box.classList.remove("scale-95", "opacity-0");
+        box.classList.add("scale-100", "opacity-100");
+      }, 10);
+    }
+
+    function closePopup() {
+      const popup = document.getElementById("inquiryPopup");
+      const box = document.getElementById("popupBox");
+      box.classList.remove("scale-100", "opacity-100");
+      box.classList.add("scale-95", "opacity-0");
+      setTimeout(() => {
+        popup.classList.remove("flex");
+        popup.classList.add("hidden");
+      }, 300);
+    }
+    // script for sending mail
+    (function () {
+      emailjs.init("cvwofE2qFJuM0P1h4");
+    })();
+
+    document
+      .getElementById("contactForm")
+      .addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        emailjs.sendForm("service_gxtpq3o", "template_x3ipqpw", this).then(
+          () => {
+            showToast("Form submitted successfully!");
+            this.reset();
+          },
+          (error) => {
+            alert("Failed to send email");
+            console.error(error);
+          },
+        );
+      });
+  </script>
+</html>
